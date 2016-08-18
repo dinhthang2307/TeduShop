@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TeduShop.Data;
+﻿using TeduShop.Data;
 using TeduShop.Data.Infrastructure;
 
 namespace TedShop.Data.Infrastructure
@@ -28,5 +23,4 @@ namespace TedShop.Data.Infrastructure
             DbContext.SaveChanges();
         }
     }
-        
 }
