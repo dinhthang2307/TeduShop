@@ -3,7 +3,7 @@ using TeduShop.Model.Models;
 
 namespace TedShop.Data.Repositories
 {
-    public interface ITagRepository
+    public interface ITagRepository : IRepository<Tag>
     {
     }
 
@@ -11,6 +11,7 @@ namespace TedShop.Data.Repositories
     {
         public TagRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+
         }
     }
 }

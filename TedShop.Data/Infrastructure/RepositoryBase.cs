@@ -25,7 +25,7 @@ namespace TeduShop.Data.Infrastructure
         }
 
         #endregion Properties
-
+    
         protected RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
@@ -47,6 +47,11 @@ namespace TeduShop.Data.Infrastructure
 
         public virtual void Delete(T entity)
         {
+            dbSet.Remove(entity);
+        }
+        public virtual void Delete(int id)
+        {
+            var entity = dbSet.Find(id);
             dbSet.Remove(entity);
         }
 
