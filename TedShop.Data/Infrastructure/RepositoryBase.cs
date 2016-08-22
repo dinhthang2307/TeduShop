@@ -23,9 +23,8 @@ namespace TeduShop.Data.Infrastructure
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
+        #endregion
 
-        #endregion Properties
-    
         protected RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
