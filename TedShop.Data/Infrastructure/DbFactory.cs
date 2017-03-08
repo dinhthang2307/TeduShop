@@ -6,7 +6,7 @@ namespace TedShop.Data.Infrastructure
     public class DbFactory : Disposable, IDbFactory
     {
         private TeduShopDbContext dbContext;
-
+        
         public TeduShopDbContext Init()
         {
             return dbContext ?? (dbContext = new TeduShopDbContext());

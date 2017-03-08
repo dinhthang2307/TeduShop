@@ -1,7 +1,7 @@
 ﻿using TeduShop.Data;
 using TeduShop.Data.Infrastructure;
 
-namespace TedShop.Data.Infrastructure
+namespace TeduShop.Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {

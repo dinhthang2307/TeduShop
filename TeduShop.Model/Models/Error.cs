@@ -11,7 +11,7 @@ namespace TeduShop.Model.Models
     [Table("Errors")]
     public class Error
     {
-        [Key]
+        [Key]       
         public int ID { set; get; }
 
         public string Message { set; get; }

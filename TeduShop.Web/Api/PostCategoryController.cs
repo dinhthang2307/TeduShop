@@ -12,30 +12,23 @@ namespace TeduShop.Web.Api
     [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
-        IPostCategoryService _PostCategoryService;
+        IPostCategoryService _postCategoryService;
 
         public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) :
             base(errorService)
         {
-            this._PostCategoryService = postCategoryService;
+            this._postCategoryService = postCategoryService;
         }
 
         [Route("getall")]
-        public HttpResponseMessage Get(HttpRequestMessage request, PostCategory postCategory)
+        public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listCategory = _PostCategoryService.GetAll();
+                var listCategory = _postCategoryService.GetAll();
 
-                    response = request.CreateResponse(HttpStatusCode.Created, listCategory);
-                }
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+
                 return response;
             });
         }
@@ -51,8 +44,8 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    var category = _PostCategoryService.Add(postCategory);
-                    _PostCategoryService.Save();
+                    var category = _postCategoryService.Add(postCategory);
+                    _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
                 }
@@ -71,8 +64,8 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    _PostCategoryService.Update(postCategory);
-                    _PostCategoryService.Save();
+                    _postCategoryService.Update(postCategory);
+                    _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
@@ -91,8 +84,8 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    _PostCategoryService.Delete(id);
-                    _PostCategoryService.Save();
+                    _postCategoryService.Delete(id);
+                    _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
