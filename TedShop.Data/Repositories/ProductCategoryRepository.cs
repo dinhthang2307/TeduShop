@@ -3,7 +3,7 @@ using System.Linq;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
-namespace TedShop.Data.Repositories
+namespace TeduShop.Data.Repositories
 {
     public interface IProductCategoryRepository:IRepository<ProductCategory>
     {

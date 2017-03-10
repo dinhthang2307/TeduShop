@@ -2,7 +2,7 @@
 using TeduShop.Model.Models;
 using System.Collections.Generic;
 using System.Linq;
-namespace TedShop.Data.Repositories
+namespace TeduShop.Data.Repositories
 {
     public interface IPostRepository : IRepository<Post>
     {

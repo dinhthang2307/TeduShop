@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using TedShop.Data.Repositories;
 using TeduShop.Data.Infrastructure;
+using TeduShop.Data.Repositories;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Service

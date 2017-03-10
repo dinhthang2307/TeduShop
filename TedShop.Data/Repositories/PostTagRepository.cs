@@ -1,8 +1,7 @@
-﻿using TedShop.Data.Repositories;
-using TeduShop.Data.Infrastructure;
+﻿using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 
-namespace TedShop.Data.Repositories
+namespace TeduShop.Data.Repositories
 {
     public interface IPostTagRepository:IRepository<PostTag>
     {
