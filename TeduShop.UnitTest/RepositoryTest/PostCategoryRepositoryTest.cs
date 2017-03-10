@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using TedShop.Data.Infrastructure;
-using TedShop.Data.Repositories;
 using TeduShop.Data.Infrastructure;
+using TeduShop.Data.Repositories;
 using TeduShop.Model.Models;
 
 namespace TeduShop.UnitTest.RepositoryTest

@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
-using TedShop.Data.Repositories;
-using TedShop.Data.Repositories;
+using TeduShop.Data.Repositories;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
 using TeduShop.Service;
