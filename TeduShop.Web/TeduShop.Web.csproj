@@ -238,6 +238,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.route.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\components\products\productAddView.js" />
+    <Content Include="app\components\products\productListView.js" />
+    <Content Include="app\components\products\productEditView.js" />
+    <Content Include="app\components\products\productAddView.html" />
+    <Content Include="app\components\products\productEditView.html" />
+    <Content Include="app\components\products\productListView.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
@@ -245,12 +253,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\plugins\angular\angular-csp.css" />
-    <Content Include="Scripts\plugins\angular\angular.js" />
-    <Content Include="Scripts\plugins\angular\angular.min.js" />
-    <Content Include="Scripts\plugins\angular\index.js" />
-    <Content Include="Scripts\spa\app.js" />
-    <Content Include="Scripts\spa\TeduShopDirective.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -261,8 +263,18 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\orders\" />
+    <Folder Include="app\components\product_categories\" />
+    <Folder Include="app\components\roles\" />
+    <Folder Include="app\components\users\" />
+    <Folder Include="app\shared\footer\" />
+    <Folder Include="app\shared\navigation\" />
+    <Folder Include="app\shared\services\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Asserts\admin\" />
+    <Folder Include="Asserts\admin\css\" />
+    <Folder Include="Asserts\admin\img\" />
+    <Folder Include="Asserts\admin\js\" />
+    <Folder Include="Asserts\admin\libs\" />
     <Folder Include="Asserts\client\" />
   </ItemGroup>
   <ItemGroup>
@@ -295,15 +307,6 @@
   <ItemGroup>
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\plugins\angular\.bower.json" />
-    <Content Include="Scripts\plugins\angular\angular.min.js.gzip" />
-    <Content Include="Scripts\plugins\angular\angular.min.js.map" />
-    <Content Include="Scripts\plugins\angular\bower.json" />
-    <Content Include="Scripts\plugins\angular\LICENSE.md" />
-    <Content Include="Scripts\plugins\angular\package.json" />
-    <Content Include="Scripts\plugins\angular\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Index.cshtml" />
