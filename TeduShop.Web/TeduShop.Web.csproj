@@ -216,6 +216,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
+    <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -234,6 +235,9 @@
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
+    <Compile Include="Models\ProductCategoryViewModel.cs" />
+    <Compile Include="Models\ProductTagViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -249,7 +253,11 @@
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\productListView.html" />
+    <Content Include="app\components\product_categories\ProductCategories.module.js" />
+    <Content Include="app\components\product_categories\ProductCategoryListView.html" />
+    <Content Include="app\components\product_categories\ProductCategoryListController.js" />
     <Content Include="app\shared\module\tedushop.common.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Asserts\admin\css\AdminLTE.css" />
     <Content Include="Asserts\admin\css\AdminLTE.min.css" />
     <Content Include="Asserts\admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -501,7 +509,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -512,12 +522,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\product_categories\" />
     <Folder Include="app\components\roles\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\services\" />
     <Folder Include="App_Data\" />
     <Folder Include="Asserts\client\" />
   </ItemGroup>

@@ -15,6 +15,7 @@ namespace TeduShop.UnitTest.ServiceTest
         private Mock<IUnitOfWork> _mockUnitOfWork;
         private IPostCategoryService _categoryService;
         private List<PostCategory> _listCategory;
+
         [TestInitialize]
         public void Initialize()
         {
@@ -35,7 +36,7 @@ namespace TeduShop.UnitTest.ServiceTest
             //SET UP METHOD
             _mockRepository.Setup(m => m.GetAll(null)).Returns(_listCategory);
 
-            //call action 
+            //call action
             var result = _categoryService.GetAll() as List<PostCategory>;
 
             //comparre

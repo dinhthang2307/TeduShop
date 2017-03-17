@@ -1,8 +1,9 @@
-namespace TedShop.Data.Migrations
+﻿namespace TedShop.Data.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using TeduShop.Data;
@@ -17,40 +18,62 @@ namespace TedShop.Data.Migrations
 
         protected override void Seed(TeduShop.Data.TeduShopDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
 
-            var user = new ApplicationUser()
+            CreateProductCategorySample(context);
+          //  This method will be called after migrating to the latest version.
+          //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
+          //  var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
+
+            //  var user = new ApplicationUser()
+            //  {
+            //      UserName = "tedu",
+            //      Email = "tedu.international@gmail.com",
+            //      EmailConfirmed = true,
+            //      BirthDay = DateTime.Now,
+            //      FullName = "Technology Education"
+            //  };
+            //  manager.Create(user, "123654$");
+
+            //  if (!roleManager.Roles.Any())
+            //  {
+            //      roleManager.Create(new IdentityRole { Name = "Admin" });
+            //      roleManager.Create(new IdentityRole { Name = "User" });
+
+            //  }
+
+            //  var adminUser = manager.FindByEmail("tedu.international@gmail.com");
+
+            //  manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+
+        }
+
+        private void CreateProductCategorySample(TeduShop.Data.TeduShopDbContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
             {
-                UserName = "tedu",
-                Email = "tedu.international@gmail.com",
-                EmailConfirmed = true,
-                BirthDay = DateTime.Now,
-                FullName = "Technology Education"
+                List<ProductCategory> listProductCategory = new List<ProductCategory>()
+            {
+                new ProductCategory()
+                {
+                    Name="Điện lạnh", Alias="dien-lanh",Status=true
+                },
+                 new ProductCategory()
+                {
+                    Name="Viễn Thông", Alias="vien-thong",Status=true
+                },
+                  new ProductCategory()
+                {
+                    Name="Mỹ phẩm", Alias="do-gia-dung",Status=true
+                },
+                   new ProductCategory()
+                {
+                    Name="Đồ gia dụng", Alias="my-pham",Status=true
+                },
             };
-            manager.Create(user, "123654$");
 
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
             }
-
-            var adminUser = manager.FindByEmail("tedu.international@gmail.com");
-
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
         }
     }
 }
