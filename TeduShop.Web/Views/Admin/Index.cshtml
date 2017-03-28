@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/Asserts/admin/css/AdminLTE.min.css">
+    <link href="~/Asserts/admin/libs/toastr/toastr.css" rel="stylesheet" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/Asserts/admin/css/skins/_all-skins.min.css">
@@ -566,30 +567,21 @@
              immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
     </div>
-    <!-- ./wrapper -->
-    <!-- jQuery 2.2.3 -->
     <script src="~/Asserts/admin/libs/jquery/dist/jquery.js"></script>
     <script src="~/Asserts/admin/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-   
-    <!-- SlimScroll -->
-
     <script src="~/Asserts/admin/libs/slimScroll/jquery.slimscroll.js"></script>
-    <!-- FastClick -->
-
     <script src="~/Asserts/admin/libs/fastclick/lib/fastclick.js"></script>
-    <!-- AdminLTE App -->
     <script src="/Asserts/admin/js/app.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    @*<script src="../../dist/js/demo.js"></script>*@
-    <!-- Begin embedded angularjs-->
+    <script src="~/Asserts/admin/libs/toastr/toastr.js"></script>
     <script src="~/Asserts/admin/libs/angular/angular.js"></script>
     <script src="~/Asserts/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
+
     <script src="~/app/shared/module/tedushop.common.js"></script>
+    <script src="~/app/shared/services/notificationService.js"></script>
     <script src="~/app/shared/filter/statusFilter.js"></script>
     <script src="~/app/shared/services/apiService.js"></script>
     <script src="~/app/shared/directives/pagerDirective.js"></script>
-
     <script src="~/app/components/product_categories/ProductCategories.module.js"></script>
     <script src="~/app/components/product_categories/ProductCategoryListController.js"></script>
     <script src="~/app/components/products/products.module.js"></script>
