@@ -8,7 +8,7 @@
             get: get
         }
 
-        function get(url, params, success, failed) {
+        function get(url, params, success, failure) {
             $http.get(url, params).then(function (result) {
                 success(result);
             }, function (error) {
