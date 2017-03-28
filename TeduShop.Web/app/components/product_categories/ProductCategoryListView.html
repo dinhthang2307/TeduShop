@@ -17,6 +17,16 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyWord" placeholder="Từ khóa...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm!</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
             <table class="table table-bordered">
                 <tr>
                     <th style="width: 5%">ID</th>
@@ -37,10 +47,15 @@
                         <span ng-class="{'badge bg-red':item.Status==false, 'badge bg-green':item.Status==true}">{{item.Status|statusFilter}}</span>
                     </td>
                     <td>
-                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></i></button>
+                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                         <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Tổng số bản ghi: {{totalCount}}</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
         <!-- /.box-body -->
