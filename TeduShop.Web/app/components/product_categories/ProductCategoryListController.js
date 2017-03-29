@@ -1,15 +1,15 @@
 ﻿(function (app) {
-    app.controller('productCategoryListController', productCategoryListController);
+    app.controller('ProductCategoryListController', ProductCategoryListController);
 
-    productCategoryListController.$inject = ['$scope', 'apiService', 'notificationService'];
+    ProductCategoryListController.$inject = ['$scope', 'apiService', 'notificationService'];
 
-    function productCategoryListController($scope, apiService, notificationService) {
+    function ProductCategoryListController($scope, apiService, notificationService) {
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
         $scope.getProductCategories = getProductCategories;
-        $scope.keyWord = '';
-
+        $scope.keyWord ='';
+        $scope.addProductCategory
         $scope.search = search;
         function search() {
             getProductCategories();

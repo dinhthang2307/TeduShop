@@ -1,4 +1,4 @@
-﻿/// <reference path="/Asserts/admin/libs/angular/angular.js" />
+﻿// <reference path="/Asserts/admin/libs/angular/angular.js" />
 
 (function () {
     angular.module('tedushop.product_categories', ['tedushop.common']).config(config);
@@ -9,7 +9,11 @@
         $stateProvider.state('product_categories', {
             url: "/product_categories",
             templateUrl: "/app/components/product_categories/ProductCategoryListView.html",
-            controller: "productCategoryListController"
+            controller: "ProductCategoryListController"
+        }).state('add_product_category', {
+            url: "/add_product_category",
+            templateUrl: "/app/components/product_categories/ProductCategoryAddView.html",
+            controller: "ProductCategoryAddController"
         });
     }
 })();
