@@ -66,14 +66,15 @@ namespace TeduShop.Web.Api
             });
         }
 
-        [Route("Create")]
+        [Route("create")]
         [HttpPost]
+        [AllowAnonymous]
         public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel productCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (!ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     response = request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
                 }
@@ -87,10 +88,7 @@ namespace TeduShop.Web.Api
 
                     var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
-
-
                 }
-
                 return response;
             });
         }

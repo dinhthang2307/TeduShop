@@ -24,14 +24,14 @@
             toastr.success(message);
         }
 
-        function displayError(Error) {
+        function displayError(error) {
             if (Array.isArray(error)) {
-                error.each(function (err) {
-                    toastr.error(err);
+                error.each(function (error) {
+                    toastr.error(error);
                 });
             }
             else {
-                toastr.error(err);
+                toastr.error(error);
             }
         }
 

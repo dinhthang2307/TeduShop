@@ -1,17 +1,29 @@
 ﻿(function (app) {
     app.controller('ProductCategoryAddController', ProductCategoryAddController);
-    ProductCategoryAddController.$inject = ['apiService','$scope'];
-    function ProductCategoryAddController(apiService, $scope) {
+    ProductCategoryAddController.$inject = ['apiService','$scope', 'notificationService', '$state'];
+    function ProductCategoryAddController(apiService, $scope, notificationService, $state) {
         $scope.productCategory = {
             CreatedDate: new Date(),
-            Status:true
+            Status: true,
+            Name:"Danh mục 1"
         }
+
+        $scope.AddProductCategory = AddProductCategory;
+       
+        function AddProductCategory() {
+            apiService.post('api/productcategory/create', $scope.productCategory,
+                function (result) {
+                    notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
+                    $state.go('product_categories');
+            }, function (error) {
+                notificationService.displayError('Thêm mới không thành công.');
+            });
+        }
+      
 
         function loadParentCategory() {
             apiService.get('api/productcategory/getallparents', null, function (result) {
-
                 $scope.parentCategories = result.data;
-
             }, function () {
                 console.log('Cannot get list parent');
             });
