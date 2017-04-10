@@ -10,8 +10,7 @@
         $scope.getProductCategories = getProductCategories;
         $scope.keyWord ='';
        
-        $scope.search = search;
-        function search() {
+        $scope.search = function search() {
             getProductCategories();
         }
 

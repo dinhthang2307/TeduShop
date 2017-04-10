@@ -51,9 +51,11 @@ namespace TeduShop.Web.Api
             var model = _productCategoryService.GetAll(keyWord);
 
             totalRow = model.Count();
-            var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+            var query = model.OrderByDescending(x => x.CreatedDate)
+                .Skip(page * pageSize).Take(pageSize);
 
-            var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(query);
+            var responseData = Mapper.Map<IEnumerable<ProductCategory>,
+                IEnumerable<ProductCategoryViewModel>>(query);
             var paginationSet = new PaginationSet<ProductCategoryViewModel>()
             {
                 Items = responseData,
@@ -71,10 +73,12 @@ namespace TeduShop.Web.Api
         [AllowAnonymous]
         public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel productCategoryVm)
         {
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             return CreateHttpResponse(request, () =>
             {
+                var error = ModelState.Values.SelectMany(v => v.Errors);
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     response = request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
                 }

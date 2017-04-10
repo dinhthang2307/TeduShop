@@ -31,30 +31,50 @@ namespace TeduShop.Web.Infrastructure.Extensions
             postCategory.Status = postCategoryvm.Status;
         }
 
-        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel postCategoryvm)
-        {
-            productCategory.ID = postCategoryvm.ID;
-            productCategory.Name = postCategoryvm.Name;
+        public static void UpdateProductCategory(this ProductCategory productCategory,
+            ProductCategoryViewModel productCategoryvm)
+        {/*  public int ID { set; get; }
 
-            productCategory.Description = postCategoryvm.Description;
-            productCategory.Alias = postCategoryvm.Alias;
-            productCategory.ParentID = postCategoryvm.ParentID;
-            productCategory.DisplayOrder = postCategoryvm.DisplayOrder;
+        [Required]
+        public string Name { set; get; }
 
-            productCategory.Image = postCategoryvm.Image;
+        [Required]
+        public string Alias { set; get; }
 
-            productCategory.HomeFlag = postCategoryvm.HomeFlag;
+        public string Description { set; get; }
+        public int? ParentID { set; get; }
+        public string Image { set; get; }
+        public int? DisplayOrder { set; get; }
+        public bool? HomeFlag { set; get; }
+        public virtual IEnumerable<PostViewModel> Posts { set; get; }
+        public DateTime? CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public string MetaKeyword { get; set; }
+        public string MetaDescription { get; set; }
 
-            productCategory.CreatedDate = postCategoryvm.CreatedDate;
-            productCategory.CreatedBy = postCategoryvm.CreatedBy;
-            productCategory.UpdatedDate = postCategoryvm.UpdatedDate;
-            productCategory.UpdatedBy = postCategoryvm.UpdatedBy;
+        [Required]
+        public bool Status { get; set; }
+*/
+            productCategory.ID = productCategoryvm.ID;
+            productCategory.Name = productCategoryvm.Name;
 
-            productCategory.MetaDescription = postCategoryvm.MetaKeyword;
+            productCategory.Description = productCategoryvm.Description;
+            productCategory.Alias = productCategoryvm.Alias;
+            productCategory.ParentID = productCategoryvm.ParentID;
+            productCategory.DisplayOrder = productCategoryvm.DisplayOrder;
 
-            productCategory.MetaKeyword = postCategoryvm.MetaKeyword;
+            productCategory.Image = productCategoryvm.Image;
+            productCategory.HomeFlag = productCategoryvm.HomeFlag;
+            productCategory.CreatedDate = productCategoryvm.CreatedDate;
+            productCategory.CreatedBy = productCategoryvm.CreatedBy;
+            productCategory.UpdatedDate = productCategoryvm.UpdatedDate;
+            productCategory.UpdatedBy = productCategoryvm.UpdatedBy;
 
-            productCategory.Status = postCategoryvm.Status;
+            productCategory.MetaDescription = productCategoryvm.MetaDescription;
+            productCategory.MetaKeyword = productCategoryvm.MetaKeyword;
+            productCategory.Status = productCategoryvm.Status;
         }
 
         public static void UpdatePost(this Post post, PostViewModel postvm)

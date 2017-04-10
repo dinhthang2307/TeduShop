@@ -14,7 +14,7 @@
                 success(result);
             }, function (error) {
                 console.log(error.status)
-                if (error.status === '401') {
+                if (error.status === 401) {
                     notificationService.displayError('Authenticate is required.');
                 }
                 else if (failure != null) {

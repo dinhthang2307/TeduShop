@@ -9,8 +9,12 @@ namespace TeduShop.Web.Models
     public class ProductViewModel
     {
         public int ID { set; get; }
+
+
         [Required]
         public string Name { set; get; }
+
+
         [Required]
         public string Alias { set; get; }
         public int CategoryID { set; get; }
@@ -30,6 +34,8 @@ namespace TeduShop.Web.Models
         public string UpdatedBy { get; set; }
         public string MetaKeyword { get; set; }
         public string MetaDescription { get; set; }
+
+
         [Required]
         public bool Status { get; set; }
     }
