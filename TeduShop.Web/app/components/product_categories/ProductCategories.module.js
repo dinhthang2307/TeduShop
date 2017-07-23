@@ -14,9 +14,9 @@
             url: "/add_product_category",
             templateUrl: "/app/components/product_categories/ProductCategoryAddView.html",
             controller: "ProductCategoryAddController"
-            }).state('edit_item', {
+            }).state('edit_product_category', {
                 url: "/edit_product_category/:id",
-                templateUrl: "/app/components/product_categories/ProductCategoryAddView.html",
+                templateUrl: "/app/components/product_categories/ProductCategoryEditView.html",
                 controller: "ProductCategoryEditController"
             });
     }

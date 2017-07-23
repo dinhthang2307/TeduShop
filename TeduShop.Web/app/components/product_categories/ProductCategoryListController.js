@@ -10,7 +10,8 @@
         $scope.getProductCategories = getProductCategories;
         $scope.keyWord = '';
         $scope.deleteProductCategory = deleteProductCategory;       
-        $scope.search = function search() {
+        $scope.search = search;
+        function search() {
             getProductCategories();
         }
 
@@ -18,13 +19,21 @@
             $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
                 var config = {
                     params: {
-                        id: id
+                        id : id
                     }
                 }
-            })
+
+                apiService.del('api/productcategory/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }),
+                function () {
+                    notificationService.displayError('Xóa không thành công');
+                }
+            });
         }
 
-        function getProductCategories( page) {
+        function getProductCategories(page) {
             page = page || 0;
             var config = {
                 params: {

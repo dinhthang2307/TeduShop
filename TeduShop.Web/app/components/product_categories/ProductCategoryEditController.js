@@ -1,15 +1,15 @@
 ﻿(function (app) {
     app.controller('ProductCategoryEditController', ProductCategoryEditController);
 
-    categoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state', '$stateParams'];
+    ProductCategoryEditController.$inject = ['apiService', '$scope', 'notificationService', '$state', '$stateParams'];
 
-    function ProductCategoryEditController() {
+    function ProductCategoryEditController(apiService, $scope, notificationService, $state, $stateParams) {
         $scope.productCategory = {
 
         }
 
-        $scope.EditProductCategory = function () {
-            apiService.put('api/productcategory/update', $scope.ProductCategory,
+        $scope.editProductCategory = function () {
+            apiService.put('api/productcategory/update', $scope.productCategory,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được cập nhật.');
                     $state.go('product_categories');
@@ -18,10 +18,10 @@
                 });
         }
 
-        $scope.loadProductCategoryDetail = loadCategoryDetail;
-        function loadCategoryDetail() {
+        $scope.loadProductCategoryDetail = loadProductCategoryDetail;
+        function loadProductCategoryDetail() {
             apiService.get('api/productcategory/getbyid/' + $stateParams.id, null, function (result) {
-                $scope.ProductCategory = result.data;
+                $scope.productCategory = result.data;
             }), function (error) {
                 notificationService.displayError(error.data);
             };

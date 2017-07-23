@@ -51,8 +51,8 @@
                         <span ng-class="{'badge bg-red':item.Status==false, 'badge bg-green':item.Status==true}">{{item.Status|statusFilter}}</span>
                     </td>
                     <td>
-                        <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <button class="btn btn-primary" ui-sref="edit_product_category({id:item.ID})"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </td>
                 </tr>
                 <tfoot>
