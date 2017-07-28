@@ -268,6 +268,7 @@
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\filter\statusFilter.js" />
     <Content Include="app\shared\services\notificationService.js" />
+    <Content Include="Asserts\admin\css\custom.css" />
     <Content Include="Asserts\admin\css\AdminLTE.css" />
     <Content Include="Asserts\admin\css\AdminLTE.min.css" />
     <Content Include="Asserts\admin\css\alt\AdminLTE-bootstrap-social.css" />
