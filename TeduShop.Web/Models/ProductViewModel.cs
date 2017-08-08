@@ -25,7 +25,7 @@ namespace TeduShop.Web.Models
         public string Description { set; get; }    
         public bool? HomeFlag { set; get; }
         public bool? HotFlag { set; get; }
-        public int? viewCount { set; get; }
+        public int? ViewCount { set; get; }
         public virtual ProductCategoryViewModel ProductCategory { set; get; }
        
         public DateTime? CreatedDate { get; set; }
