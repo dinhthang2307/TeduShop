@@ -70,31 +70,31 @@ namespace TeduShop.Web.Api
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel ProductVm)
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productCategoryVm)
         {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
             return CreateHttpResponse(request, () =>
             {
-                var error = ModelState.Values.SelectMany(v => v.Errors);
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)
                 {
-                    response = request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
                     var newProduct = new Product();
-                    newProduct.UpdateProduct(ProductVm);
-
+                    newProduct.UpdateProduct(productCategoryVm);
+                    newProduct.CreatedDate = DateTime.Now;
                     _productService.Add(newProduct);
                     _productService.Save();
 
                     var responseData = Mapper.Map<Product, ProductViewModel>(newProduct);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
+
                 return response;
             });
         }
+
 
         [Route("update")]
         public HttpResponseMessage Put(HttpRequestMessage request, ProductViewModel ProductVm)
