@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿    using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data
@@ -60,7 +59,6 @@ namespace TeduShop.Data
         {
             modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
             modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
-          
         }
 
         public static TeduShopDbContext Create()

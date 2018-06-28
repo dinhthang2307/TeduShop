@@ -16,7 +16,7 @@
             apiService.post('api/product/create', $scope.product,
                 function (result) {
                     notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
-                    $state.go('products');
+                    $state.go('product_categories');
                 }, function (error) {
                     notificationService.displayError('Thêm mới không thành công.');
                 });
