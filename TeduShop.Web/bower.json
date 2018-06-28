@@ -10,8 +10,6 @@
     "slimScroll": "*",
     "toastr": "*",
     "ngBootbox": "*",
-    "bootbox": "*",
-    "ckeditor": "~4.7.1",
-    "ng-ckeditor": "~0.2.1"
+    "bootbox": "*"
   }
 }

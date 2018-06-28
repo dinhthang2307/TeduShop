@@ -33,7 +33,30 @@ namespace TeduShop.Web.Infrastructure.Extensions
 
         public static void UpdateProductCategory(this ProductCategory productCategory,
             ProductCategoryViewModel productCategoryvm)
-        {
+        {/*  public int ID { set; get; }
+
+        [Required]
+        public string Name { set; get; }
+
+        [Required]
+        public string Alias { set; get; }
+
+        public string Description { set; get; }
+        public int? ParentID { set; get; }
+        public string Image { set; get; }
+        public int? DisplayOrder { set; get; }
+        public bool? HomeFlag { set; get; }
+        public virtual IEnumerable<PostViewModel> Posts { set; get; }
+        public DateTime? CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public string MetaKeyword { get; set; }
+        public string MetaDescription { get; set; }
+
+        [Required]
+        public bool Status { get; set; }
+*/
             productCategory.ID = productCategoryvm.ID;
             productCategory.Name = productCategoryvm.Name;
 
@@ -53,35 +76,6 @@ namespace TeduShop.Web.Infrastructure.Extensions
             productCategory.MetaKeyword = productCategoryvm.MetaKeyword;
             productCategory.Status = productCategoryvm.Status;
         }
-
-        public static void UpdateProduct(this Product product,
-          ProductViewModel productVm)
-        {
-            product.ID = productVm.ID;
-            product.Name = productVm.Name;
-
-            product.Description = productVm.Description;
-            product.Alias = productVm.Alias;
-            product.CategoryID = productVm.CategoryID;
-            product.Price = productVm.Price;
-            product.MoreImages = productVm.MoreImages;
-            product.Promotion = productVm.Promotion;
-            product.Warranty = productVm.Warranty;
-            product.HotFlag = productVm.HotFlag;
-            product.ViewCount = productVm.ViewCount;
-
-            product.HomeFlag = productVm.HomeFlag;
-            product.CreatedDate = productVm.CreatedDate;
-            product.CreatedBy = productVm.CreatedBy;
-            product.UpdatedDate = productVm.UpdatedDate;
-            product.UpdatedBy = productVm.UpdatedBy;
-
-            product.MetaDescription = productVm.MetaDescription;
-            product.MetaKeyword = productVm.MetaKeyword;
-            product.Status = productVm.Status;
-        }
-
-
 
         public static void UpdatePost(this Post post, PostViewModel postvm)
         {
