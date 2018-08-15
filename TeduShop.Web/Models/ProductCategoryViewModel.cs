@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace TeduShop.Web.Models
 {
@@ -10,7 +8,6 @@ namespace TeduShop.Web.Models
     {
         public int ID { set; get; }
 
-        
         [Required(ErrorMessage = "Yêu cầu nhập tên danh mục!")]
         public string Name { set; get; }
 
@@ -20,6 +17,7 @@ namespace TeduShop.Web.Models
         public string Description { set; get; }
 
         public int? ParentID { set; get; }
+
         public int? DisplayOrder { set; get; }
 
         public string Image { set; get; }
@@ -30,14 +28,11 @@ namespace TeduShop.Web.Models
 
         public DateTime? CreatedDate { set; get; }
 
-
         public string CreatedBy { set; get; }
 
         public DateTime? UpdatedDate { set; get; }
 
-
         public string UpdatedBy { set; get; }
-
 
         public string MetaKeyword { set; get; }
 

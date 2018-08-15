@@ -80,6 +80,18 @@
     <Compile Include="Migrations\201703081001399_changkey.Designer.cs">
       <DependentUpon>201703081001399_changkey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806291412170_addtagfield.cs" />
+    <Compile Include="Migrations\201806291412170_addtagfield.Designer.cs">
+      <DependentUpon>201806291412170_addtagfield.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808111717326_addoriginal.cs" />
+    <Compile Include="Migrations\201808111717326_addoriginal.Designer.cs">
+      <DependentUpon>201808111717326_addoriginal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808121220126_addQuantity.cs" />
+    <Compile Include="Migrations\201808121220126_addQuantity.Designer.cs">
+      <DependentUpon>201808121220126_addQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -130,6 +142,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703081001399_changkey.resx">
       <DependentUpon>201703081001399_changkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806291412170_addtagfield.resx">
+      <DependentUpon>201806291412170_addtagfield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808111717326_addoriginal.resx">
+      <DependentUpon>201808111717326_addoriginal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808121220126_addQuantity.resx">
+      <DependentUpon>201808121220126_addQuantity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

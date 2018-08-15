@@ -48,7 +48,6 @@
             }
         }
 
-
         $scope.$watch("products", function (n, o) {
             var checked = $filter("filter")(n, { checked: true });
             if (checked.length) {

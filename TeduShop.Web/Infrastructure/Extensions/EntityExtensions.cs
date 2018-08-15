@@ -36,19 +36,16 @@ namespace TeduShop.Web.Infrastructure.Extensions
         {
             productCategory.ID = productCategoryvm.ID;
             productCategory.Name = productCategoryvm.Name;
-
             productCategory.Description = productCategoryvm.Description;
             productCategory.Alias = productCategoryvm.Alias;
             productCategory.ParentID = productCategoryvm.ParentID;
             productCategory.DisplayOrder = productCategoryvm.DisplayOrder;
-
             productCategory.Image = productCategoryvm.Image;
             productCategory.HomeFlag = productCategoryvm.HomeFlag;
             productCategory.CreatedDate = productCategoryvm.CreatedDate;
             productCategory.CreatedBy = productCategoryvm.CreatedBy;
             productCategory.UpdatedDate = productCategoryvm.UpdatedDate;
             productCategory.UpdatedBy = productCategoryvm.UpdatedBy;
-
             productCategory.MetaDescription = productCategoryvm.MetaDescription;
             productCategory.MetaKeyword = productCategoryvm.MetaKeyword;
             productCategory.Status = productCategoryvm.Status;
@@ -59,29 +56,41 @@ namespace TeduShop.Web.Infrastructure.Extensions
         {
             product.ID = productVm.ID;
             product.Name = productVm.Name;
-
-            product.Description = productVm.Description;
             product.Alias = productVm.Alias;
             product.CategoryID = productVm.CategoryID;
-            product.Price = productVm.Price;
+            product.Image = productVm.Image;
             product.MoreImages = productVm.MoreImages;
+            product.Price = productVm.Price;
             product.Promotion = productVm.Promotion;
             product.Warranty = productVm.Warranty;
+            product.Description = productVm.Description;
+            product.Content = productVm.Content;
+            product.Tags = productVm.Tags;
+            product.HomeFlag = productVm.HomeFlag;
+            product.Quantity = productVm.Quantity;
             product.HotFlag = productVm.HotFlag;
             product.ViewCount = productVm.ViewCount;
-
-            product.HomeFlag = productVm.HomeFlag;
+            product.OriginalPrice = productVm.OriginalPrice;
             product.CreatedDate = productVm.CreatedDate;
             product.CreatedBy = productVm.CreatedBy;
             product.UpdatedDate = productVm.UpdatedDate;
             product.UpdatedBy = productVm.UpdatedBy;
-
             product.MetaDescription = productVm.MetaDescription;
             product.MetaKeyword = productVm.MetaKeyword;
             product.Status = productVm.Status;
         }
 
-
+        /// <summary>
+        /// mapping product tag view model and product tag
+        /// </summary>
+        /// <param name="product"></param>
+        /// <param name="productVm"></param>
+        public static void UpdateProductTag(this ProductTag productTag,
+          ProductTagViewModel productTagVm)
+        {
+            productTag.ProductID = productTagVm.ProductID;
+            productTag.TagID = productTagVm.TagID;
+        }
 
         public static void UpdatePost(this Post post, PostViewModel postvm)
         {
@@ -93,7 +102,6 @@ namespace TeduShop.Web.Infrastructure.Extensions
             post.Content = postvm.Content;
             post.HomeFlag = postvm.HomeFlag;
             post.viewCount = postvm.viewCount;
-
             post.CreatedDate= postvm.CreatedDate;
             post.CreatedBy = postvm.CreatedBy;
             post.UpdatedBy = postvm.UpdatedBy;

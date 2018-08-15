@@ -1,11 +1,11 @@
 ﻿<section class="content-header">
-    <h1>mục
-        Thêm mới sản phẩm
+    <h1>
+        mục Thêm mới sản phẩm
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         <li><a href="#">Sản phẩm</a></li>
-        <li><a ui-sref="product_categories">Danh sách</a></li>
+        <li><a ui-sref="products">Danh sách</a></li>
         <li class="active">Thêm mới</li>
     </ol>
 </section>
@@ -20,8 +20,9 @@
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Tên sản phẩm</label>
                     <div class="col-sm-10">
-                        <input type="text" required class="form-control" name="name" ng-model="product.Name">
-                        <span ng-show="frmAddProduct.name.$invalid" class="has-error">Phải nhập tên danh mục</span>
+                        <input type="text" required class="form-control" ng-change="GetSeoTitle()" ng-maxlength="256" name="name" ng-model="product.Name">
+                        <span ng-show="frmAddProduct.name.$invalid" class="has-error">Phải nhập tên sản phẩm</span>
+                        <span ng-show="frmAddProduct.name.$error.maxlength" class="has-error">Tên sản phẩm chỉ được 256 kí tự</span>
                     </div>
                 </div>
 
@@ -30,6 +31,7 @@
                     <div class="col-sm-10">
                         <input type="text" required class="form-control" name="alias" ng-model="product.Alias">
                         <span ng-show="frmAddProduct.alias.$invalid" class="has-error">Phải nhập tiêu đề SEO</span>
+                        <span ng-show="frmAddProduct.alias.$error.maxlength" class="has-error">Tiêu đề SEO chỉ được 256 ký tự</span>
                     </div>
                 </div>
 
@@ -37,16 +39,17 @@
                     <label for="inputEmail3" class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="description" ng-model="product.Description">
+                        <span ng-show="frmAddProduct.description.$error.maxlength" class="has-error">Mô tả chỉ được 500 ký tự</span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Tên danh mục</label>
                     <div class="col-sm-10">
-                        <select name="parentID" class="form-control" ng-model="product.ParentID" ng-options="option.ID as option.Name for option in parentCategories">
-                            <option value="">Danh mục chưa xác định</option>
+                        <select name="parentID" class="form-control" ng-model="product.CategoryID" ng-options="option.ID as option.Name for option in productCategories">
+                            <option value="">Chọn danh mục</option>
                         </select>
-                        <input type="hidden" name="parentId" ng-model="product.ParentID" />
+                        <input type="hidden" name="parentId" ng-model="product.CategoryID" />
 
                     </div>
                 </div>
@@ -56,13 +59,6 @@
                         <input type="number" class="form-control" name="warranty" ng-model="product.Warranty">(tháng)
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Thứ tự</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="displayOrder" ng-model="product.DisplayOrder">
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Giá nhập</label>
                     <div class="col-sm-10">
@@ -70,6 +66,7 @@
                         <span ng-show="frmAddProduct.originalPrice.$invalid" class="has-error">Phải nhập giá</span>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Giá</label>
                     <div class="col-sm-10">
@@ -77,32 +74,33 @@
                         <span ng-show="frmAddProduct.price.$invalid" class="has-error">Phải nhập giá</span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Giá KM</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="promotionPrice" ng-model="product.PromotionPrice">
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Số lượng</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="quantity" ng-model="product.Quantity">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Hình ảnh</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" name="Image" ng-model="product.Image">
+                        <input type="email" class="form-control" name="image" ng-model="product.Image">
                         <button class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Mô tả sản phẩm</label>
+                    <label for="inputEmail4" class="col-sm-2 control-label">Mô tả sản phẩm</label>
                     <div class="col-sm-10">
                         <textarea class="form-control" name="content" ckeditor="ckeditorOptions" ng-model="product.Content"></textarea>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label for="inputEmail5" class="col-sm-2 control-label">Tags</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="tags" ng-model="product.Tags">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Meta Keyword</label>
                     <div class="col-sm-10">
@@ -123,7 +121,6 @@
                                 <input type="checkbox" name="status" ng-checked="product.Status" ng-model="product.Status"> Kích hoạt
                             </label>
                         </div>
-
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-checked="product.HomeFlag" ng-model="product.HomeFlag"> Hiển thị trang chủ
@@ -139,9 +136,8 @@
             </div>
             <!-- /.box-body -->
             <!-- /.box-footer -->
-
             <div class="box-footer">
-                <button ui-sref="product_categories" class="btn btn-default">Hủy</button>
+                <button ui-sref="products" class="btn btn-default">Hủy</button>
                 <button type="submit" ng-disabled="frmAddProduct.$invalid" class="btn btn-success pull-right">Lưu</button>
             </div>
         </form>

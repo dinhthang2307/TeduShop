@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -272,6 +273,7 @@
     <Content Include="app\shared\module\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\filter\statusFilter.js" />
+    <Content Include="app\shared\services\commonService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Asserts\admin\css\custom.css" />
     <Content Include="Asserts\admin\css\AdminLTE.css" />

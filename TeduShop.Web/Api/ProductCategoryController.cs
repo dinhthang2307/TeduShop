@@ -87,7 +87,6 @@ namespace TeduShop.Web.Api
                 {
                     var newProductCategory = new ProductCategory();
                     newProductCategory.UpdateProductCategory(productCategoryVm);
-
                     _productCategoryService.Add(newProductCategory);
                     _productCategoryService.Save();
 

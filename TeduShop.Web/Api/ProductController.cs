@@ -25,21 +25,6 @@ namespace TeduShop.Web.Api
             this._productService = ProductService;
         }
 
-        /*[Route("getallparents")]
-        [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                
-                var model = _productService.GetAll();
-                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(model);
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-                return response;
-            });
-        }*/
-
-
         [Route("getall")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request,string keyWord, int page, int pageSize = 20)
@@ -70,7 +55,7 @@ namespace TeduShop.Web.Api
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel ProductVm)
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productVm)
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
             return CreateHttpResponse(request, () =>
@@ -84,8 +69,13 @@ namespace TeduShop.Web.Api
                 else
                 {
                     var newProduct = new Product();
-                    newProduct.UpdateProduct(ProductVm);
-
+                    
+                    newProduct.UpdateProduct(productVm);
+                if (newProduct.CategoryID == null || newProduct.CategoryID == 0)
+                    {
+                        newProduct.CategoryID = 1;
+                    }
+                    newProduct.CreatedDate = DateTime.Now;
                     _productService.Add(newProduct);
                     _productService.Save();
 
@@ -188,6 +178,5 @@ namespace TeduShop.Web.Api
                 return response;
             });
         }
-
     }
 }
