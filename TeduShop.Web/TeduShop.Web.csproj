@@ -254,6 +254,9 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\Home\homeView.html" />
     <Content Include="app\components\Home\homeController.js" />
+    <Content Include="app\components\Home\rootController.js" />
+    <Content Include="app\components\login\loginController.js" />
+    <Content Include="app\components\login\loginView.html" />
     <Content Include="app\components\products\products.module.js" />
     <Content Include="app\components\products\productAddController.js" />
     <Content Include="app\components\products\productListController.js" />
@@ -268,6 +271,9 @@
     <Content Include="app\components\product_categories\ProductCategoryListController.js" />
     <Content Include="app\components\product_categories\ProductCategoryEditController.js" />
     <Content Include="app\components\product_categories\ProductCategoryEditView.html" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
+    <Content Include="app\shared\views\baseView.html" />
     <Content Include="app\shared\directives\pagerDirective.html" />
     <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\module\tedushop.common.js" />
