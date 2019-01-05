@@ -4,8 +4,8 @@
         ['tedushop.products',
             'tedushop.product_categories',
             'tedushop.common'])
-        .config(config)
-        .config(configAuthentication);
+        .config(config);
+        // .config(configAuthentication);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -15,22 +15,20 @@
                 url: '',
                 templateUrl: '/app/shared/views/baseView.html',
                 abstract: true
-            })
-            .state('/login', {
+            }).state('/login', {
                 url: "/login",
                 templateUrl: "/app/components/login/loginView.html",
                 controller: "loginController"
-            })
-            .state('home', {
+            }).state('home', {
                 url: "/admin",
+                parent: 'base',
                 templateUrl: "/app/components/home/homeView.html",
                 controller: "homeController"
-            })
-            ;
+            });
         $urlRouterProvider.otherwise('/login');
     }
 
-    function configAuthentication($httpProvider) {
+    /* function configAuthentication($httpProvider) {
         $httpProvider.interceptors.push(function ($q, $location) {
             return {
                 request: function (config) {
@@ -54,5 +52,5 @@
                 }
             }
         })
-    }
+    } */
 })();

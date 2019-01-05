@@ -3,7 +3,8 @@
     rootController.$inject = ['$scope', '$state'];
     function rootController($scope, $state) {
         $scope.logout = function () {
-            $state.go('login');
+             console.log('log out ne');
+             $state.go('login');
         }
     }
-})(angular.module('tedushop'));.
+})(angular.module('tedushop'));

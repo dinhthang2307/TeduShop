@@ -56,6 +56,7 @@ namespace TeduShop.Web.Api
                 return response;
             });
         }
+
         [Route("update")]
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
