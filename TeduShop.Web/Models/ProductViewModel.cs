@@ -40,6 +40,9 @@ namespace TeduShop.Web.Models
 
         public decimal OriginalPrice { set; get; }
 
+        public int? viewCount { set; get; }
+        public virtual ProductCategoryViewModel ProductCategory { set; get; }
+       
         public DateTime? CreatedDate { get; set; }
 
         public string CreatedBy { get; set; }
@@ -54,8 +57,6 @@ namespace TeduShop.Web.Models
 
         [Required]
         public bool Status { get; set; }
-
-        public virtual ProductCategoryViewModel ProductCategory { set; get; }
 
         public virtual IEnumerable<ProductTagViewModel> ProductTags { set; get; }
     }

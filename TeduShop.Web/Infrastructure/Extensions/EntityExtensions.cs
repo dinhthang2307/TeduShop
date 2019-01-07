@@ -33,7 +33,30 @@ namespace TeduShop.Web.Infrastructure.Extensions
 
         public static void UpdateProductCategory(this ProductCategory productCategory,
             ProductCategoryViewModel productCategoryvm)
-        {
+        {/*  public int ID { set; get; }
+
+        [Required]
+        public string Name { set; get; }
+
+        [Required]
+        public string Alias { set; get; }
+
+        public string Description { set; get; }
+        public int? ParentID { set; get; }
+        public string Image { set; get; }
+        public int? DisplayOrder { set; get; }
+        public bool? HomeFlag { set; get; }
+        public virtual IEnumerable<PostViewModel> Posts { set; get; }
+        public DateTime? CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public string MetaKeyword { get; set; }
+        public string MetaDescription { get; set; }
+
+        [Required]
+        public bool Status { get; set; }
+*/
             productCategory.ID = productCategoryvm.ID;
             productCategory.Name = productCategoryvm.Name;
             productCategory.Description = productCategoryvm.Description;

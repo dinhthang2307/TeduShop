@@ -7,10 +7,7 @@
             Status: true
         }
 
-        $scope.ckeditorOptions = {
-            language: 'vi',
-            height: '200px'
-        }
+    function productAddController() {
 
         $scope.GetSeoTitle = GetSeoTitle;
 

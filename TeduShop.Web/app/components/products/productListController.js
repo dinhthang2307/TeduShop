@@ -1,7 +1,7 @@
 ﻿(function (app) {
     app.controller('productListController', productListController);
 
-    productListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox', '$filter'];
+    function productListController() {
 
     function productListController($scope, apiService, notificationService, $ngBootbox, $filter) {
         $scope.products = [];
@@ -108,4 +108,4 @@
 
         $scope.getProducts();
     }
-})(angular.module('tedushop.products'));    
+})(angular.module('tedushop.products'));
