@@ -3,17 +3,17 @@
 	"private": true,
   "dependencies": {
     "angular": "~1.5.5",
+    "angular-loading-bar": "~0.9.0",
+    "angular-local-storage": "~0.2.7",
     "angular-ui-router": "~0.2.18",
+    "bootbox": "*",
     "bootstrap": "~3.3.7",
+    "ckeditor": "~4.7.1",
     "fastclick": "*",
     "jquery": "~2.2.0",
-    "slimScroll": "*",
-    "toastr": "*",
     "ngBootbox": "*",
-    "bootbox": "*",
-    "ckeditor": "~4.7.1",
     "ng-ckeditor": "~0.2.1",
-    "angular-local-storage": "~0.2.7",
-    "angular-loading-bar": "*"
+    "slimScroll": "*",
+    "toastr": "*"
   }
 }

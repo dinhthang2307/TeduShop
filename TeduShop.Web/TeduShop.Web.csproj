@@ -219,6 +219,7 @@
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
+    <Compile Include="Api\ProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -547,6 +548,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UploadFiles\files\anh1.jpg" />
+    <Content Include="UploadFiles\files\anh2.jpg" />
+    <Content Include="UploadFiles\_thumbs\Files\anh1.jpg" />
+    <Content Include="UploadFiles\_thumbs\Files\anh2.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -566,6 +571,8 @@
     <Folder Include="app\shared\navigation\" />
     <Folder Include="App_Data\" />
     <Folder Include="Asserts\client\" />
+    <Folder Include="UploadFiles\flash\" />
+    <Folder Include="UploadFiles\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,3 +1,4 @@
 {
-    "directory": "Asserts/admin/libs"
+  "directory": "Asserts/admin/libs",
+  "registry": "https://registry.bower.io"
 }
