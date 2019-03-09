@@ -1,62 +1,48 @@
 ﻿using TeduShop.Model.Models;
 using TeduShop.Web.Models;
 
+/// <summary>
+/// TeduShop.Web.Infrastructure.Extensions
+/// </summary>
 namespace TeduShop.Web.Infrastructure.Extensions
 {
+    /// <summary>
+    /// Entity Extensions
+    /// </summary>
     public static class EntityExtensions
     {
+        /// <summary>
+        /// Update Post Category
+        /// </summary>
+        /// <param name="postCategory"></param>
+        /// <param name="postCategoryvm"></param>
         public static void UpdatePostCategory(this PostCategory postCategory, PostCategoryViewModel postCategoryvm)
         {
             postCategory.ID = postCategoryvm.ID;
             postCategory.Name = postCategoryvm.Name;
-
             postCategory.Description = postCategoryvm.Description;
             postCategory.Alias = postCategoryvm.Alias;
             postCategory.ParentID = postCategoryvm.ParentID;
             postCategory.DisplayOrder = postCategoryvm.DisplayOrder;
-
             postCategory.Image = postCategoryvm.Image;
-
             postCategory.HomeFlag = postCategoryvm.HomeFlag;
-
             postCategory.CreatedDate = postCategoryvm.CreatedDate;
             postCategory.CreatedBy = postCategoryvm.CreatedBy;
             postCategory.UpdatedDate = postCategoryvm.UpdatedDate;
             postCategory.UpdatedBy = postCategoryvm.UpdatedBy;
-
             postCategory.MetaDescription = postCategoryvm.MetaKeyword;
-
             postCategory.MetaKeyword = postCategoryvm.MetaKeyword;
-
             postCategory.Status = postCategoryvm.Status;
         }
 
+        /// <summary>
+        /// Update Product Category
+        /// </summary>
+        /// <param name="productCategory"></param>
+        /// <param name="productCategoryvm"></param>
         public static void UpdateProductCategory(this ProductCategory productCategory,
             ProductCategoryViewModel productCategoryvm)
-        {/*  public int ID { set; get; }
-
-        [Required]
-        public string Name { set; get; }
-
-        [Required]
-        public string Alias { set; get; }
-
-        public string Description { set; get; }
-        public int? ParentID { set; get; }
-        public string Image { set; get; }
-        public int? DisplayOrder { set; get; }
-        public bool? HomeFlag { set; get; }
-        public virtual IEnumerable<PostViewModel> Posts { set; get; }
-        public DateTime? CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public string MetaKeyword { get; set; }
-        public string MetaDescription { get; set; }
-
-        [Required]
-        public bool Status { get; set; }
-*/
+        {
             productCategory.ID = productCategoryvm.ID;
             productCategory.Name = productCategoryvm.Name;
             productCategory.Description = productCategoryvm.Description;
@@ -74,6 +60,11 @@ namespace TeduShop.Web.Infrastructure.Extensions
             productCategory.Status = productCategoryvm.Status;
         }
 
+        /// <summary>
+        /// Update Product
+        /// </summary>
+        /// <param name="product"></param>
+        /// <param name="productVm"></param>
         public static void UpdateProduct(this Product product,
           ProductViewModel productVm)
         {
@@ -115,6 +106,11 @@ namespace TeduShop.Web.Infrastructure.Extensions
             productTag.TagID = productTagVm.TagID;
         }
 
+        /// <summary>
+        /// Update Post
+        /// </summary>
+        /// <param name="post"></param>
+        /// <param name="postvm"></param>
         public static void UpdatePost(this Post post, PostViewModel postvm)
         {
             post.ID = postvm.ID;

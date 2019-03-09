@@ -18,6 +18,11 @@ namespace TeduShop.Web.Api
         {
         }
 
+        /// <summary>
+        /// AccountController
+        /// </summary>
+        /// <param name="userManager"></param>
+        /// <param name="signInManager"></param>
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;

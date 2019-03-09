@@ -5,6 +5,7 @@
         var userInfo;
         var deferred;
 
+        // login service
         this.login = function (userName, password) {
             deferred = $q.defer();
             var data = "grant_type=password&username=" + userName + "&password=" + password;

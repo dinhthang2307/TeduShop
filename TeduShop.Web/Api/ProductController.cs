@@ -15,6 +15,7 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/product")]
+    [Authorize]
     public class ProductController : ApiControllerBase
     {
         private IProductService _productService;

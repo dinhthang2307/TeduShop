@@ -10,15 +10,31 @@ using TeduShop.Service;
 
 namespace TeduShop.Web.Infrastructure.Core
 {
+    /// <summary>
+    /// ApiControllerBase
+    /// </summary>
     public class ApiControllerBase : ApiController
     {
+        /// <summary>
+        /// IErrorService
+        /// </summary>
         private IErrorService _errorService;
 
+        /// <summary>
+        /// HttpResponseMessage
+        /// </summary>
+        /// <param name="errorService"></param>
         public ApiControllerBase(IErrorService errorService)
         {
             this._errorService = errorService;
         }
 
+        /// <summary>
+        /// CreateHttpResponse
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <param name="function"></param>
+        /// <returns></returns>
         protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
@@ -52,6 +68,10 @@ namespace TeduShop.Web.Infrastructure.Core
             return response;
         }
 
+        /// <summary>
+        /// LogError
+        /// </summary>
+        /// <param name="ex"></param>
         private void LogError(Exception ex)
         {
             try

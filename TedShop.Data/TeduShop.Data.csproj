@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201808121220126_addQuantity.Designer.cs">
       <DependentUpon>201808121220126_addQuantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903091758580_add-user.cs" />
+    <Compile Include="Migrations\201903091758580_add-user.Designer.cs">
+      <DependentUpon>201903091758580_add-user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808121220126_addQuantity.resx">
       <DependentUpon>201808121220126_addQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903091758580_add-user.resx">
+      <DependentUpon>201903091758580_add-user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
