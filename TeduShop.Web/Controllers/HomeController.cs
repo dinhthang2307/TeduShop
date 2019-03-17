@@ -32,5 +32,35 @@ namespace TeduShop.Web.Controllers
             ViewBag.Message = "Your contact page.";
             return View();
         }
+
+        /// <summary>
+        /// Footer
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
+        /// Header
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Header()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
+        /// Category
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        public ActionResult Category()
+        {
+            return PartialView();
+        }
     }
 }

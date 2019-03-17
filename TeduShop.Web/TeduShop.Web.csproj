@@ -3603,6 +3603,67 @@
     <Content Include="Asserts\admin\libs\toastr\toastr.js" />
     <Content Include="Asserts\admin\libs\toastr\toastr.min.css" />
     <Content Include="Asserts\admin\libs\toastr\toastr.min.js" />
+    <Content Include="Asserts\client\css\bootstrap.css" />
+    <Content Include="Asserts\client\css\etalage.css" />
+    <Content Include="Asserts\client\css\form.css" />
+    <Content Include="Asserts\client\css\style.css" />
+    <Content Include="Asserts\client\images\a-star.png" />
+    <Content Include="Asserts\client\images\arrow1.png" />
+    <Content Include="Asserts\client\images\arrow2.png" />
+    <Content Include="Asserts\client\images\avatar.png" />
+    <Content Include="Asserts\client\images\b-arrow.png" />
+    <Content Include="Asserts\client\images\ba.jpg" />
+    <Content Include="Asserts\client\images\baa.jpg" />
+    <Content Include="Asserts\client\images\bag.jpg" />
+    <Content Include="Asserts\client\images\bag1.jpg" />
+    <Content Include="Asserts\client\images\bo.jpg" />
+    <Content Include="Asserts\client\images\bott.jpg" />
+    <Content Include="Asserts\client\images\bottle.jpg" />
+    <Content Include="Asserts\client\images\ch.jpg" />
+    <Content Include="Asserts\client\images\facebook.png" />
+    <Content Include="Asserts\client\images\gpluse.png" />
+    <Content Include="Asserts\client\images\img-sprite.png" />
+    <Content Include="Asserts\client\images\label_new.png" />
+    <Content Include="Asserts\client\images\logo.png" />
+    <Content Include="Asserts\client\images\pi.jpg" />
+    <Content Include="Asserts\client\images\pi1.jpg" />
+    <Content Include="Asserts\client\images\pi2.jpg" />
+    <Content Include="Asserts\client\images\pi3.jpg" />
+    <Content Include="Asserts\client\images\pi4.jpg" />
+    <Content Include="Asserts\client\images\pic.jpg" />
+    <Content Include="Asserts\client\images\pic1.jpg" />
+    <Content Include="Asserts\client\images\pic10.jpg" />
+    <Content Include="Asserts\client\images\pic11.jpg" />
+    <Content Include="Asserts\client\images\pic12.jpg" />
+    <Content Include="Asserts\client\images\pic13.jpg" />
+    <Content Include="Asserts\client\images\pic2.jpg" />
+    <Content Include="Asserts\client\images\pic3.jpg" />
+    <Content Include="Asserts\client\images\pic4.jpg" />
+    <Content Include="Asserts\client\images\pic5.jpg" />
+    <Content Include="Asserts\client\images\pic6.jpg" />
+    <Content Include="Asserts\client\images\pic7.jpg" />
+    <Content Include="Asserts\client\images\pic8.jpg" />
+    <Content Include="Asserts\client\images\review.png" />
+    <Content Include="Asserts\client\images\rss.png" />
+    <Content Include="Asserts\client\images\s1.jpg" />
+    <Content Include="Asserts\client\images\s2.jpg" />
+    <Content Include="Asserts\client\images\s3.jpg" />
+    <Content Include="Asserts\client\images\s4.jpg" />
+    <Content Include="Asserts\client\images\sh.jpg" />
+    <Content Include="Asserts\client\images\si1.jpg" />
+    <Content Include="Asserts\client\images\si2.jpg" />
+    <Content Include="Asserts\client\images\si3.jpg" />
+    <Content Include="Asserts\client\images\si4.jpg" />
+    <Content Include="Asserts\client\images\star.png" />
+    <Content Include="Asserts\client\images\tick1.png" />
+    <Content Include="Asserts\client\images\twitter.png" />
+    <Content Include="Asserts\client\images\wa.jpg" />
+    <Content Include="Asserts\client\images\wat.jpg" />
+    <Content Include="Asserts\client\images\zoom.png" />
+    <Content Include="Asserts\client\js\jquery.etalage.min.js" />
+    <Content Include="Asserts\client\js\jquery.flexisel.js" />
+    <Content Include="Asserts\client\js\jquery.min.js" />
+    <Content Include="Asserts\client\js\jquery.wmuSlider.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
@@ -3632,7 +3693,6 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Asserts\client\" />
     <Folder Include="UploadFiles\flash\" />
     <Folder Include="UploadFiles\images\" />
   </ItemGroup>
@@ -3918,6 +3978,35 @@
     <Content Include="Asserts\admin\libs\angular-loading-bar\package.json" />
     <Content Include="Asserts\admin\libs\angular-loading-bar\PULL_REQUEST_TEMPLATE.md" />
     <Content Include="Asserts\admin\libs\angular-loading-bar\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectionStrings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asserts\client\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layouts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Category.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
