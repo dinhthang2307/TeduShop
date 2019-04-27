@@ -3,6 +3,7 @@ using TeduShop.Common;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
 using TeduShop.Model.Models;
+using System.Linq;
 
 namespace TeduShop.Service
 {
@@ -21,11 +22,15 @@ namespace TeduShop.Service
         Product GetById(int id);
 
         void Save();
+
+        IEnumerable<Product> GetLastest(int top);
+
+        IEnumerable<Product> GetHotProduct(int top);
     }
 
     public class ProductService : IProductService
     {
-        private IProductRepository _ProductRepository;
+        private IProductRepository _productRepository;
         private IUnitOfWork _unitOfWork;
         private ITagRepository _tagRepository;
         private IProductTagRepository _productTagRepository;
@@ -33,7 +38,7 @@ namespace TeduShop.Service
         public ProductService(IProductRepository ProductRepository, IUnitOfWork unitOfWork,
              ITagRepository _tagRepository, IProductTagRepository _productTagRepository)
         {
-            this._ProductRepository = ProductRepository;
+            this._productRepository = ProductRepository;
             this._unitOfWork = unitOfWork;
             this._tagRepository = _tagRepository;
             this._productTagRepository = _productTagRepository;
@@ -42,7 +47,7 @@ namespace TeduShop.Service
         public Product Add(Product Product)
         {
             //add product
-            var product = _ProductRepository.Add(Product);
+            var product = _productRepository.Add(Product);
             _unitOfWork.Commit();
 
             //add tag
@@ -72,12 +77,12 @@ namespace TeduShop.Service
 
         public Product Delete(int id)
         {
-            return _ProductRepository.Delete(id);
+            return _productRepository.Delete(id);
         }
 
         public IEnumerable<Product> GetAll()
         {
-            return _ProductRepository.GetAll();
+            return _productRepository.GetAll();
         }
 
         public IEnumerable<Product> GetAll(string keyWord)
@@ -85,16 +90,26 @@ namespace TeduShop.Service
 
             if (!string.IsNullOrEmpty(keyWord))
 
-                return _ProductRepository.GetMulti(x => x.Name.Contains(keyWord) || x.Description.Contains(keyWord));
+                return _productRepository.GetMulti(x => x.Name.Contains(keyWord) || x.Description.Contains(keyWord));
             else
             {
-                return _ProductRepository.GetAll();
+                return _productRepository.GetAll();
             }
         }
 
         public Product GetById(int id)
         {
-            return _ProductRepository.GetSingleById(id);
+            return _productRepository.GetSingleById(id);
+        }
+
+        public IEnumerable<Product> GetHotProduct(int top)
+        {
+            return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetLastest(int top)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
         }
 
         public void Save()
@@ -104,7 +119,7 @@ namespace TeduShop.Service
 
         public void Update(Product Product)
         {
-            _ProductRepository.Update(Product);
+            _productRepository.Update(Product);
         }
     }
 }

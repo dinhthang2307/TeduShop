@@ -1,55 +1,24 @@
-﻿<div class="sub-cate">
+﻿@model IEnumerable<TeduShop.Web.Models.ProductCategoryViewModel>
+<div class="sub-cate">
     <div class=" top-nav rsidebar span_1_of_left">
         <h3 class="cate">CATEGORIES</h3>
         <ul class="menu">
-            <li class="item1">
-                <a href="#">Curabitur sapien<img class="arrow-img" src="~/Asserts/client/images/arrow1.png" alt="" /> </a>
-                <ul class="cute">
-                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-                </ul>
-            </li>
-            <li class="item2">
-                <a href="#">Dignissim purus <img class="arrow-img " src="~/Asserts/client/images/arrow1.png" alt="" /></a>
-                <ul class="cute">
-                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-                </ul>
-            </li>
-            <li class="item3">
-                <a href="#">Ultrices id du<img class="arrow-img img-arrow" src="~/Asserts/client/images/arrow1.png" alt="" /> </a>
-                <ul class="cute">
-                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-                    <li class="subitem3"><a href="product.html">Automatic Fails</a></li>
-                </ul>
-            </li>
-            <li class="item4">
-                <a href="#">Cras iacaus rhone <img class="arrow-img img-left-arrow" src="~/Asserts/client/images/arrow1.png" alt="" /></a>
-                <ul class="cute">
-                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>
-                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>
-                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>
-                </ul>
-            </li>
-            <li>
-                <ul class="kid-menu">
-                    <li><a href="product.html">Tempus pretium</a></li>
-                    <li><a href="product.html">Dignissim neque</a></li>
-                    <li><a href="product.html">Ornared id aliquet</a></li>
-                </ul>
-            </li>
-            <ul class="kid-menu ">
-                <li><a href="product.html">Commodo sit</a></li>
-                <li><a href="product.html">Urna ac tortor sc</a></li>
-                <li><a href="product.html">Ornared id aliquet</a></li>
-                <li><a href="product.html">Urna ac tortor sc</a></li>
-                <li><a href="product.html">Eget nisi laoreet</a></li>
-                <li><a href="product.html">Faciisis ornare</a></li>
-                <li class="menu-kid-left"><a href="contact.html">Contact us</a></li>
-            </ul>
+            @foreach (var item in Model.Where(x => x.ParentID == null))
+            {
+                var childCategories = Model.Where(x => x.ParentID == item.ID);
+                <li class="item1">
+                    <a href="#">@item.Name @(childCategories.Count() > 0 ? "<img class=\"arrow-img\" src=\"/Asserts/client/images/arrow1.png\" alt=\"\" />" : "") </a>
+                    @if (childCategories.Count() > 0)
+                    {
+                        <ul class="cute">
+                            @foreach (var childCategory in childCategories)
+                            {
+                                <li class="subitem1"><a href="product.html">@childCategory.Name </a></li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
         </ul>
     </div>
     <!--initiate accordion-->
@@ -80,5 +49,5 @@
             <h6><a href="single.html">Lorem ipsum dolor</a></h6>
         </div>
     </div>
-    <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a>
+    <a class="view-all all-product" href="product.html">Xem tất cả sản phẩm<span> </span></a>
 </div>

@@ -15,7 +15,6 @@ using TeduShop.Web.Models;
 namespace TeduShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
-    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         private IProductCategoryService _productCategoryService;
@@ -35,7 +34,6 @@ namespace TeduShop.Web.Api
                 
                 var model = _productCategoryService.GetAll();
                 var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-
 
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;

@@ -20,7 +20,6 @@ namespace TeduShop.Model.Models
         [StringLength(256)]
       
         public string Image { set; get; }
-
         
         [StringLength(256)]
         public string URL { set; get; }
